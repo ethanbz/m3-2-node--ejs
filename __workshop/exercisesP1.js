@@ -15,8 +15,8 @@ const q1 = (req, res) => {
 const q2 = (req, res) => {
   // pass this variable to the ejs file and render it in the answer box.
   const sentence = '<p>This is the way.</p>';
-
-  res.render('pages/question2', {});
+ 
+  res.render('pages/question2', {str: sentence});
 };
 
 // -----------------------------------------------
@@ -34,7 +34,7 @@ const q3 = (req, res) => {
     favoriteBeverage: 'Duff Beer',
   };
 
-  res.render('pages/question3');
+  res.render('pages/question3', {homer: homer});
 };
 
 // -----------------------------------------------
@@ -42,8 +42,8 @@ const q3 = (req, res) => {
 // -----------------------------------------------
 const q4 = (req, res) => {
   const popularGirlNames = ['Olivia', 'Ruby', 'Emily', 'Grace', 'Jessica'];
-
-  res.render('pages/question4');
+  const top3 = popularGirlNames.slice(0, 3);
+  res.render('pages/question4', {names: top3});
 };
 
 // -----------------------------------------------
@@ -52,7 +52,7 @@ const q4 = (req, res) => {
 const q5 = (req, res) => {
   const popularGirlNames = ['Olivia', 'Ruby', 'Emily', 'Grace', 'Jessica'];
 
-  res.render('pages/question5');
+  res.render('pages/question5', {names: popularGirlNames});
 };
 
 // We export the functions so that they may be 'required' or imported in other files.

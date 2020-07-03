@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<head>
-  <title>Node: Workshop 2</title>
-  <link rel="stylesheet" href="./css/styles.css" />
-</head>
+<%- include('../partials/head'), {} %>
 <body>
   <header>
     <h1>Node: Workshop 2</h1>
@@ -14,6 +10,12 @@
       <div class="box answer">
         <h3>Answer</h3>
         <!-- render answer here -->
+        <h3>Top 5 girls names in the England and Wales</h3>
+        <ol>
+        <% names.forEach(name => { %>
+          <li><%= names.indexOf(name)+1 + '. ' + name %></li>
+        <% }); %>
+        </ol>
       </div>
     </div>
   </div>
